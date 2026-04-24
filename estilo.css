@@ -1,0 +1,11 @@
+h1, h2, h3, h4, h5, h6 {
+    color:brown;
+}
+
+#titulo_principal {
+    color:rgb(255, 117, 255);
+}
+
+#contenedor1{
+    background-color: rgb(203, 116, 116);
+}
