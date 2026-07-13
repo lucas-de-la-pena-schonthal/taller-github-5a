@@ -1,0 +1,674 @@
+/* =========================================================================
+   1. RESETEO GENERAL Y ELEMENTOS BASE
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #FAF3D1; /* AMARILLO PASTEL: Fondo general de la página */
+    color: #333333;
+    padding-top: 90px;
+}
+
+/* =========================================================================
+   2. BARRA DE NAVEGACIÓN SUPERIOR (MENU CELESTE Y HOVER BLANCO)
+   ========================================================================= */
+.barra-navegacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #C2D7ED; /* CELESTE PASTEL: Fondo de la barra */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.2s;
+}
+
+.logo a:hover {
+    color: #ffffff;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #444444;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+/* El texto cambia a blanco puro al pasar el mouse */
+.menu a:hover, .menu a.activo {
+    color: #ffffff; 
+}
+
+/* Botón destacado del Test en Rosa Pastel */
+.menu .btn-test {
+    background-color: #D9B6D9; 
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.menu .btn-test:hover {
+    background-color: #c59bc5; 
+    transform: scale(1.05);
+}
+
+/* =========================================================================
+   3. CONTENEDORES PRINCIPALES E INTRODUCCIONES
+   ========================================================================= */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.introduccion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.introduccion h2 {
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.introduccion p {
+    color: #666666;
+    font-size: 18px;
+}
+
+/* =========================================================================
+   4. SECCIÓN 1: MÉTODOS DE ESTUDIO (CUADRÍCULA / GRID)
+   ========================================================================= */
+.cuadricula-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px; 
+}
+
+.tarjeta {
+    background-color: #FFFDF0; /* Crema suave para las tarjetas */
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(217, 182, 217, 0.45); /* Sombra rosa pastel al pasar el mouse */
+}
+
+.tarjeta-encabezado {
+    margin-bottom: 20px;
+    background-color: #DBE7F3; /* Encabezado celeste pastel */
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.tarjeta-encabezado h3 {
+    font-size: 20px;
+    color: #222222;
+    margin-bottom: 4px;
+}
+
+.tarjeta-encabezado .subtitulo {
+    font-size: 13px;
+    color: #5a7186; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pasos {
+    padding-left: 20px;
+}
+
+.pasos li {
+    font-size: 15px;
+    color: #444444;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.pasos li::marker {
+    color: #D9B6D9; /* Números de la lista en Rosa Pastel */
+    font-weight: bold;
+}
+
+/* =========================================================================
+   5. SECCIÓN 2: TÉCNICAS DE ESTUDIO (BLOQUES HORIZONTALES)
+   ========================================================================= */
+.lista-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tarjeta-horizontal {
+    display: flex;
+    background-color: #FFFDF0; 
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-horizontal:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 24px rgba(217, 182, 217, 0.45);
+}
+
+.tarjeta-lateral-celeste {
+    background-color: #DBE7F3; 
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.tarjeta-lateral-celeste span {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.tarjeta-lateral-celeste h3 {
+    font-size: 18px;
+    color: #222222;
+}
+
+.tarjeta-contenido-horizontal {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.tarjeta-contenido-horizontal p {
+    font-size: 15px;
+    color: #444444;
+    line-height: 1.6;
+}
+
+.tarjeta-contenido-horizontal strong {
+    color: #333333;
+    font-weight: 600;
+    border-bottom: 2px solid #D9B6D9; 
+    padding-bottom: 1px;
+}
+
+/* =========================================================================
+   6. SECCIÓN 3: PLANIFICA TU ESTUDIO (MENÚS INTERMEDIOS Y CALCULADORAS)
+   ========================================================================= */
+.opciones-planificacion {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tarjeta-opcion {
+    background-color: #FFFDF0; 
+    border: 1px solid rgba(0,0,0,0.02);
+    border-radius: 16px;
+    padding: 30px 20px;
+    flex: 1;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-opcion:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(217, 182, 217, 0.45); 
+}
+
+.tarjeta-opcion span {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.tarjeta-opcion h3 {
+    font-size: 20px;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+.tarjeta-opcion p {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+}
+
+.contenedor-calculadora {
+    background-color: #FFFDF0; 
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+}
+
+.btn-volver {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: #5a7186; 
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.btn-volver:hover {
+    color: #D9B6D9; 
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444444;
+}
+
+.grupo-input input {
+    padding: 12px;
+    border: 2px solid #DBE7F3; 
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.grupo-input input:focus {
+    border-color: #C2D7ED; 
+}
+
+#btn-calcular, #btn-evaluar {
+    width: 100%;
+    background-color: #D9B6D9; 
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#btn-calcular:hover, #btn-evaluar:hover {
+    background-color: #c59bc5;
+    transform: scale(1.02);
+}
+
+.resultado-plan {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #DBE7F3; 
+    border-radius: 12px;
+    border-left: 5px solid #D9B6D9; 
+    animation: aparecer 0.3s ease-in-out;
+}
+
+.resultado-plan h3 {
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+.resultado-plan p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444444;
+}
+
+.barra-progreso-contenedor {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.barra-progreso-relleno {
+    width: 0%; 
+    height: 25px;
+    background-color: #D9B6D9; 
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease-in-out, background-color 0.3s;
+}
+
+/* =========================================================================
+   7. SECCIÓN 4: ESTILOS PARA LA SECCIÓN DEL TEST (ALINEACIÓN EN BLOQUE)
+   ========================================================================= */
+.contenedor-test {
+    background-color: #FFFDF0; 
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+}
+
+#formulario-test {
+    display: flex !important;
+    flex-direction: column !important; 
+    width: 100%;
+}
+
+.pregunta-bloque {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #DBE7F3; 
+}
+
+.pregunta-texto {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 12px;
+}
+
+.opciones-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 5px;
+}
+
+.opciones-radio label {
+    font-size: 15px;
+    color: #444444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.opciones-radio input[type="radio"] {
+    accent-color: #D9B6D9; 
+    transform: scale(1.1);
+}
+
+#btn-finalizar-test {
+    width: 100%;
+    background-color: #D9B6D9; 
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    margin-top: 10px;
+}
+
+#btn-finalizar-test:hover {
+    background-color: #c59bc5;
+    transform: scale(1.02);
+}
+
+#resultado-test-caja {
+    margin-top: 30px;
+}
+
+/* =========================================================================
+   8. CLASES INVISIBLES DE OCULTADO (PILARES DEL MENÚ DE PESTAÑAS)
+   ========================================================================= */
+.seccion-oculta, .id-oculto {
+    display: none !important; /* Esconde de raíz los bloques inactivos */
+}
+
+.seccion-pagina {
+    animation: aparecer 0.4s ease-in-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================================
+   9. RESPONSIVE DESIGN (CELULARES)
+   ========================================================================= */
+@media (max-width: 600px) {
+    .tarjeta-horizontal {
+        flex-direction: column;
+    }
+    .tarjeta-lateral-celeste {
+        min-width: 100%;
+        padding: 15px;
+    }
+    .opciones-planificacion {
+        flex-direction: column;
+    }
+    .barra-navegacion {
+        padding: 0 15px;
+    }
+    .menu a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(to bottom,#FFFDF2,#FFF7D6);
+    color:#333;
+}
+
+/* ---------- BARRA ---------- */
+
+.navbar{
+    background:#DCEEFF;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.navbar h2{
+    color:#333;
+    font-size:30px;
+}
+
+.navbar nav{
+    display:flex;
+    gap:35px;
+}
+
+.navbar a{
+    color:#333;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#5A88B6;
+}
+
+/* ---------- SECCIÓN PRINCIPAL ---------- */
+
+.inicio{
+    width:90%;
+    margin:auto;
+    min-height:85vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ---------- TEXTO ---------- */
+
+.texto{
+    width:50%;
+}
+
+.texto h1{
+    font-size:60px;
+    color:#333;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.texto p{
+    font-size:21px;
+    color:#555;
+    line-height:1.7;
+    margin-bottom:40px;
+}
+
+/* ---------- BOTÓN ---------- */
+
+.boton{
+    width: fit-content;
+    padding: 18px 35px;
+
+    display:inline-block;
+    background:#BFE6FF;
+    color:#333;
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.10);
+}
+
+.boton:hover{
+    background:#A8DBFF;
+    transform:scale(1.05);
+}
+
+/* ---------- IMAGEN ---------- */
+
+.imagen{
+    width:40%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.imagen img{
+    width:380px;
+    height:380px;
+    object-fit:cover;
+    border-radius:50%;
+    background:white;
+    padding:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:15px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .navbar nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .inicio{
+        flex-direction:column;
+        text-align:center;
+        padding:50px 0;
+    }
+
+    .texto{
+        width:100%;
+    }
+
+    .texto h1{
+        font-size:42px;
+    }
+
+    .texto p{
+        font-size:18px;
+    }
+
+    .imagen{
+        width:100%;
+        margin-top:40px;
+    }
+
+    .imagen img{
+        width:280px;
+        height:280px;
+    }
+}
+
